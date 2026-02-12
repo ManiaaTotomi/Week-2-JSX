@@ -1,148 +1,202 @@
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+/* Universal reset: removes default margins, padding, and ensures consistent box model */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ============================================
+   BODY & LAYOUT
+   ============================================ */
+
+/* Main page container: centers content vertically and horizontally */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #f7f7f4;
+    background-color: #f7f7f4; /* Light beige background */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    min-height: 100vh; /* Full viewport height */
+    padding: 20px; /* Spacing on mobile */
 }
 
+/* ============================================
+   CARDS CONTAINER
+   ============================================ */
+
+/* Flex container for pricing cards - arranges cards horizontally */
 .cards-container {
     display: flex;
     flex-direction: row;
-    gap: 24px;
-    flex-wrap: nowrap;
+    gap: 24px; /* Space between cards */
+    flex-wrap: nowrap; /* Cards stay on one row */
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; /* Aligns cards to top */
 }
 
+/* ============================================
+   CARD COMPONENT
+   ============================================ */
+
+/* Individual pricing card */
 .card {
     display: flex;
-    flex-direction: column;
-    min-height: 380px;
-    background-color: #f2f1ed;
-    border-radius: 4px;
+    flex-direction: column; /* Stacks content vertically */
+    min-height: 380px; /* Minimum card height */
+    background-color: #f2f1ed; /* Card background */
+    border-radius: 4px; /* Rounded corners */
     padding: 16px;
-    width: 320px;
-    flex-shrink: 0;
+    width: 320px; /* Fixed card width */
+    flex-shrink: 0; /* Prevents card from shrinking */
 }
 
+/* Top section of card containing title, price, and features */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+/* Plan name (e.g., "Hobby", "Pro") */
 .card-title {
     font-size: 22px;
     line-height: 28px;
-    font-weight: 400;
-    color: #26251e;
+    font-weight: 400; /* Regular weight */
+    color: #26251e; /* Dark brown text */
     margin-bottom: 8px;
 }
 
+/* Price container - aligns amount and period on baseline */
 .card-price {
     font-size: 20px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* 50% opacity dark brown */
     display: inline-flex;
-    align-items: baseline;
+    align-items: baseline; /* Aligns price amount and period */
 }
 
+/* Main price amount (e.g., "$20" or "Free") */
 .card-price-amount {
     font-size: 22px;
     font-weight: 400;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Price period text (e.g., "/mo.") */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Features section container */
 .card-content {
-    margin-bottom: 32px;
+    margin-bottom: 32px; /* Space before button */
 }
 
+/* "Includes:" or "Everything in Hobby, plus:" text */
 .includes-text {
     font-size: 16px;
-    color: rgba(38, 37, 30, 0.5);
+    color: rgba(38, 37, 30, 0.5); /* Muted text color */
     margin: 16px 0px;
 }
 
+/* ============================================
+   FEATURES LIST
+   ============================================ */
+
+/* Removes default list styling */
 .features-list {
     list-style: none;
     padding: 0;
 }
 
+/* Individual feature item */
 .features-list li {
     display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+    align-items: center; /* Vertically centers checkmark and text */
+    margin-bottom: 8px; /* Space between features */
     font-size: 16px;
     color: #26251e;
 }
 
+/* Checkmark icon styling */
 .checkmark {
     color: #26251e;
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 10px; /* Space between checkmark and text */
     font-weight: 400;
 }
 
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+/* Base button styles */
 .download-button {
-    margin-top: auto;
-    width: fit-content;
-    background-color: #e6e5e0;
+    margin-top: auto; /* Pushes button to bottom of card */
+    width: fit-content; /* Button width matches content */
+    background-color: #e6e5e0; /* Light gray background */
     border: none;
-    border-radius: 999px;
+    border-radius: 999px; /* Fully rounded (pill shape) */
     padding: 14px 24px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 500; /* Medium weight */
     color: #333;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
 }
 
+/* Hover state - lighter background */
 .download-button:hover {
     background-color: #D8D6CE;
 }
 
+/* Active/pressed state */
 .download-button:active {
     background-color: #D8D6CE;
 }
 
+/* Primary button variant (used for Pro plan) */
 .download-button.primary {
-    background-color: #111;
-    color: #fff;
+    background-color: #111; /* Dark background */
+    color: #fff; /* White text */
 }
 
+/* Primary button hover state */
 .download-button.primary:hover {
-    background-color: #333;
+    background-color: #333; /* Lighter dark on hover */
 }
 
+/* Primary button active state */
 .download-button.primary:active {
     background-color: #333;
 }
 
+/* ============================================
+   PAGE LABEL
+   ============================================ */
+
+/* Fixed label at top of page (e.g., "HTML version") */
 .page-label {
-    position: fixed;
+    position: fixed; /* Stays in place when scrolling */
     top: 16px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Centers horizontally */
     font-size: 14px;
     color: #666;
     background: #fff;
     padding: 8px 16px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Subtle shadow */
 }
 
+/* Bold text within page label */
 .page-label strong {
     color: #333;
 }
