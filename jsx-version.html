@@ -28,12 +28,14 @@
             return (
                 // JSX uses "className" instead of "class" because "class" is a reserved word in JavaScript
                 <div className="card">
-                    {/* Curly braces { } let you insert JavaScript expressions into JSX */}
-                    <h1 className="card-title">{title}</h1>
-                    <p className="card-price">
-                        <span className="card-price-amount">{price}</span>
-                        <span className="card-price-period">{pricePeriod}</span>
-                    </p>
+                    <div className="card-top">
+                        {/* Curly braces { } let you insert JavaScript expressions into JSX */}
+                        <h3 className="card-title">{title}</h3>
+                        <p className="card-price">
+                            <span className="card-price-amount">{price}</span>
+                            <span className="card-price-period">{pricePeriod}</span>
+                        </p>
+                    </div>
                     <div className="card-content">
                         <p className="includes-text">{includesText}</p>
                         <ul className="features-list">
